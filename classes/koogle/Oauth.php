@@ -1,6 +1,12 @@
 <?php defined('SYSPATH') or die('No direct access allowed.');
 
+/*
+ * Google authentication class uses Oauth 2.0
+ * 
+ */
 class Koogle_Oauth {
+	
+	protected $_httpRequest;
 	
 	protected static $_instance;
 	
@@ -11,7 +17,16 @@ class Koogle_Oauth {
 	protected function __construct()
 	{
 		
-		//$this->_session = 	
+	}
+	
+	public function get_login_uri()
+	{
+		
+	}
+	
+	public function so()
+	{
+		
 	}
 	
 	public static function instance()
@@ -22,7 +37,7 @@ class Koogle_Oauth {
 		}
 		return Koogle_Oauth::$_instance;
 	}
-	
+
 	
 	
 }

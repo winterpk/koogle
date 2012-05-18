@@ -11,8 +11,7 @@ class koogle_core {
 	 * Holds the an instance of the api
 	 * 
 	 */ 
-	protected static $_instance;
-	
+	protected static $_api;
 	
 	protected function __construct()
 	{
@@ -24,22 +23,18 @@ class koogle_core {
 	 * 
 	 * @param	(string) Google api name 
 	 */
-	public static function factory(string $api)
+	public static function factory($api)
 	{
 		if ( ! Kohana::find_file('classes/koogle/'.$api))
 			throw new Koogle_Exception('No api class found: ' . $api);
-		if ( ! isset(self::$_instance))
-		{
-			Koogle::$_instance = new Koogle_.$api;
-		}
+		self::$_api = new Koogle_.$api;
 	}
 	
 	/*
-	 * 
-	 * 
+	 * Check to see if the loaded api has authorization
 	 * 
 	 */
-	public function logged_in() 
+	public function is_auth() 
 	{
 		
 	}
